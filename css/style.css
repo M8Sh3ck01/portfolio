@@ -1,0 +1,559 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+
+:root {
+    --bg-color: #050505;
+    --surface-color: #111111;
+    --text-primary: #ffffff;
+    --text-secondary: #888888;
+    --accent-color: #3b82f6;
+    /* Modern Blue, customizable */
+    --border-color: #222222;
+    --font-main: 'Inter', sans-serif;
+    --spacing-unit: 1.5rem;
+    --radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+    padding-bottom: 5rem;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-unit);
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4 {
+    color: var(--text-primary);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+#contact p {
+    margin-bottom: 0.5rem;
+}
+
+.about-text {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    max-width: 800px;
+}
+
+/* Sections */
+section {
+    padding: 6rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+/* Hero */
+#hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Side by side */
+    gap: 2rem;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.profile-placeholder {
+    width: 320px;
+    height: 320px;
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    overflow: hidden;
+    /* Clips image to circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInUp 0.8s ease-out forwards;
+    animation-delay: 0.6s;
+    opacity: 0;
+    flex-shrink: 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.profile-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures image covers the circle without distortion */
+    display: block;
+}
+
+/* Mobile Responsiveness for Hero */
+@media (max-width: 768px) {
+    #hero {
+        flex-direction: column-reverse;
+        /* Image on top on mobile */
+        text-align: center;
+        justify-content: center;
+    }
+
+    .profile-placeholder {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 2rem;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
+    display: block;
+    /* Changed from inline-block for better control */
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid var(--accent-color);
+    width: 0;
+    animation:
+        typing 2s steps(40, end) forwards,
+        blink 0.75s step-end infinite;
+    animation-delay: 0.5s;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 16em
+    }
+
+    /* Adjusted to fully reveal "Misheck Champopa" */
+}
+
+@keyframes blink {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: var(--accent-color)
+    }
+}
+
+/* Gradient Shine Effect for Name */
+.highlight-name {
+    background: linear-gradient(90deg, var(--accent-color), #ffffff, var(--accent-color));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 4s linear infinite;
+    font-weight: 800;
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+    animation-delay: 0.4s;
+    /* Staggered delay */
+}
+
+/* Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Modern Cards */
+.card {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 0;
+    /* Remove padding to handle image header */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-color);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.card-image-container {
+    width: 100%;
+    height: 180px;
+    background: #1a1a1a;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card:hover .card-image-container img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0;
+    font-weight: 700;
+}
+
+/* Privacy Chips */
+.chip {
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.chip-public {
+    background: rgba(34, 197, 94, 0.1);
+    color: #4ade80;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.chip-private {
+    background: rgba(245, 158, 11, 0.1);
+    color: #fbbf24;
+    border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.card-description {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    flex: 1;
+}
+
+/* Placeholder Logic */
+.project-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #111 25%, #1a1a1a 50%, #111 75%);
+    background-size: 400% 400%;
+    animation: gradientShift 8s ease infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.05);
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.card-footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+}
+
+.tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.25rem 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.tag:hover {
+    background: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+}
+
+
+/* Scroll Percentage Indicator */
+#scroll-indicator {
+    position: fixed;
+    bottom: 2rem;
+    right: 3rem;
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--surface-color);
+    /* Start subtle */
+    -webkit-text-stroke: 1px var(--text-secondary);
+    /* Outline effect */
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 100;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
+        /* Smaller hero text */
+    }
+
+    .container {
+        padding: 0 1.5rem;
+        /* Ensure side padding */
+    }
+
+    #scroll-indicator {
+        font-size: 2rem;
+        /* Smaller indicator */
+        bottom: 1rem;
+        right: 1.5rem;
+    }
+
+    .grid-2,
+    .grid-3 {
+        grid-template-columns: 1fr;
+        /* Stack cards on mobile */
+    }
+}
+
+/* Footer / Contact */
+.contact-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4.5rem;
+    justify-content: flex-start;
+    /* Aligns with heading and paragraph */
+    margin-top: 0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.contact-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--accent-color);
+}
+
+.contact-item span {
+    opacity: 0.8;
+}
+
+.contact-item:hover span {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+}
+
+/* =========================================
+   Custom Cursor & Background Styles
+   ========================================= */
+
+/* Hide Default Cursor */
+body {
+    cursor: none;
+}
+
+a,
+button,
+input,
+textarea,
+.card {
+    cursor: none;
+    /* Ensure it's hidden on interactive elements too */
+}
+
+/* Particle Background Canvas */
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* Behind everything */
+    pointer-events: none;
+    /* Let clicks pass through */
+}
+
+/* Custom Cursor Dot */
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+}
+
+/* Custom Cursor Outline (Ring) */
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(59, 130, 246, 0.5);
+    /* Semi-transparent accent */
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9998;
+    /* Just below the dot */
+    transition: all 0.15s ease-out;
+    /* Smooth follow delay handled in JS, this is for hover resize */
+}
+
+/* Hover States for Cursor */
+.cursor-hover {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(59, 130, 246, 0.1);
+    /* Faint fill on hover */
+    border-color: var(--accent-color);
+}
+
+.cursor-hover-dot {
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    /* White dot on hover for contrast */
+}
