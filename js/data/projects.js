@@ -1,9 +1,9 @@
 const PROJECTS = [
     {
         title: "SwiftStock",
-        image: null, // No image yet, will trigger placeholder
-        description: "Eliminates warehouse stock-outs and inventory shrinkage through real-time multi-node tracking and automated reorder triggers.",
-        techs: ["PHP", "SQL", "MySQL", "Chart.js"],
+        image: null,
+        description: "A robust, mobile-first Inventory Management System designed to streamline stock tracking, product management, and reporting.",
+        techs: ["Laravel", "SQLite", "Tailwind CSS", "Vite"],
         isPrivate: true,
         links: {
             demo: "#",
@@ -24,8 +24,8 @@ const PROJECTS = [
     {
         title: "NexusNotes",
         image: null,
-        description: "Solves the 'fragmented notes' problem with a distraction-free, markdown-first editor featuring seamless cross-platform synchronization.",
-        techs: ["TypeScript", "Next.js", "PostgreSQL", "Tailwind"],
+        description: "A sleek, modern, and high-performance Android note-taking application designed for seamless organization and productivity.",
+        techs: ["Kotlin", "Jetpack Compose", "Room", "Firebase"],
         isPrivate: true,
         links: {
             demo: "#",
@@ -48,6 +48,17 @@ const PROJECTS = [
         image: null,
         description: "Bridges the gap between high-level JS frameworks and low-level system APIs for performance-critical Bluetooth and File System operations.",
         techs: ["Kotlin", "Java", "JNI", "Android SDK"],
+        isPrivate: true,
+        links: {
+            demo: "#",
+            repo: "#"
+        }
+    },
+    {
+        title: "CampusConnect",
+        image: null,
+        description: "A high-performance, full-stack marketplace application designed for community-based buying and selling with real-time interaction.",
+        techs: ["React Native", "Expo", "Node.js", "MongoDB", "Socket.io"],
         isPrivate: true,
         links: {
             demo: "#",
