@@ -105,7 +105,7 @@ export function Hero() {
                 <img
                   src="/profile.png"
                   alt="Misheck Champopa"
-                  className="relative z-10 block h-60 w-60 object-contain drop-shadow-[0_18px_50px_rgba(0,0,0,0.45)] sm:h-80 sm:w-80 lg:h-full lg:w-auto"
+                  className="relative z-10 block h-60 w-60 object-contain drop-shadow-[0_18px_50px_rgba(0,0,0,0.45)] sm:h-80 sm:w-80 lg:h-full lg:w-auto lg:translate-x-2"
                 />
               </div>
             </div>
