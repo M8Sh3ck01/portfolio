@@ -20,7 +20,7 @@ export const profile = {
   tagline:
     'I build scalable, native-feeling apps across Android, web, and desktop.',
   pitch:
-    'BSc ICT student at Mzuzu University building production-quality apps across Android, web and desktop, from a native bridge in Kotlin/JNI to a Tauri desktop editor. Available for freelance and internship work.',
+    'BSc ICT student at Mzuzu University building production-quality apps across Android, web and desktop, from an offline-first music player to a Tauri desktop editor and full-stack ordering platforms. Available for freelance and internship work.',
   availability: true,
   location: 'Mzuzu, Malawi',
   email: 'misheckchampopa01@gmail.com',
@@ -36,7 +36,7 @@ export const socials = [
 ]
 
 export const stats = [
-  { value: '9+', label: 'Projects built' },
+  { value: '6', label: 'Projects built' },
   { value: '15+', label: 'Technologies' },
   { value: '4', label: 'Platforms covered' },
   { value: '3+', label: 'Years building' },
@@ -55,50 +55,35 @@ export const services = [
     icon: 'globe',
     description:
       'Full-stack, scalable systems with clean architecture and modern UX.',
-    points: ['React + TypeScript frontends with Vite & Tailwind', 'Node.js, Express & Laravel backends', 'Real-time features with WebSockets & Socket.io', 'REST APIs, auth & role-based access (JWT)'],
+    points: ['React + TypeScript frontends with Vite & Tailwind', 'Node.js & Express backends with JWT auth', 'Real-time features with WebSockets & Socket.io', 'REST API design & role-based access'],
   },
   {
     title: 'System Architecture',
     icon: 'server',
     description:
       'APIs, native bridges, and backend services that connect everything.',
-    points: ['Native bridges via JNI for performance-critical paths', 'Desktop apps with Tauri + Rust', 'Bluetooth & file-system integration', 'Database design: MongoDB, SQLite, Firebase'],
+    points: ['Desktop apps with Tauri + Rust', 'Offline-first storage with Room, SQLite & WatermelonDB', 'OAuth, payments & real-time WebSocket features', 'Database design: MySQL, MongoDB, SQLite, Firebase'],
   },
 ]
 
 export const projects: Project[] = [
   {
-    title: 'SwiftStock',
-    tagline:
-      'A robust, mobile-first inventory management system designed to streamline stock tracking, product management, and reporting.',
-    category: 'Full-stack',
-    year: '2025',
-    visibility: 'Private',
-    stack: ['Laravel', 'SQLite', 'Tailwind CSS', 'Vite'],
-    problem:
-      'Small businesses tracked stock in spreadsheets: error-prone, slow to reconcile, and useless on a phone in the store.',
-    approach:
-      'Built a mobile-first inventory system on Laravel with SQLite so it runs with zero external infrastructure. Focused the UI on fast stock entry and clear reporting.',
-    result:
-      'A complete working system covering stock tracking, product management and reporting, designed to be usable from a phone in the store.',
-    takeaways:
-      'SQLite kept deployment trivial for a single-owner business, the right-sized database choice.',
-  },
-  {
     title: "AuntJoy's Platform",
     tagline:
-      'Connects local restaurants with customers via a high-performance delivery bridge, reducing vendor commission fees by 30%.',
-    category: 'Mobile',
+      'A web-based food ordering platform for Aunt Joy\u2019s Restaurant in Mzuzu, built with object-oriented PHP and a clean MVC structure.',
+    category: 'Web',
     year: '2025',
     visibility: 'Public',
-    stack: ['React Native', 'Expo', 'Node.js', 'Redux'],
-    repoUrl: 'https://github.com/M8Sh3ck01',
+    stack: ['PHP', 'MySQL', 'JavaScript', 'HTML/CSS'],
+    repoUrl: 'https://github.com/M8Sh3ck01/Auntjoys-app',
     problem:
-      'Local restaurants were locked into delivery platforms charging heavy commissions that ate their already thin margins.',
+      'A local restaurant ran on phone calls and word-of-mouth, with no structured way for customers to browse the menu or place orders.',
     approach:
-      'Built a React Native + Expo client backed by a Node.js API and Redux state management, designed so vendors deal with customers directly and keep more revenue.',
+      'Built an OOP PHP platform following MVC with a normalized MySQL schema, prepared statements for every query, session-based auth, and role-based access for customer, admin, sales and manager accounts.',
     result:
-      'A direct delivery bridge that cuts vendor commission fees by 30% versus the incumbent platforms.',
+      'A working web ordering platform where customers browse meals and place orders while staff manage the flow through role-scoped dashboards.',
+    takeaways:
+      'A normalized schema and prepared statements kept queries fast and safe against SQL injection.',
   },
   {
     title: 'NexusNotes',
@@ -106,62 +91,15 @@ export const projects: Project[] = [
       'A sleek, modern, and high-performance Android note-taking application designed for seamless organization and productivity.',
     category: 'Mobile',
     year: '2024',
-    visibility: 'Private',
+    visibility: 'Public',
     stack: ['Kotlin', 'Jetpack Compose', 'Room', 'Firebase'],
+    repoUrl: 'https://github.com/M8Sh3ck01/NexusNotes-app',
     problem:
       'Popular note apps were slow to launch and cluttered, bad for a tool meant to capture thoughts in seconds.',
     approach:
       'Built a native Android app with Kotlin and Jetpack Compose, using Room for instant offline storage and Firebase for optional sync.',
     result:
       'A fast, modern note-taking app with instant local saves and clean, distraction-free Compose UI.',
-  },
-  {
-    title: 'MZuni Marketplace',
-    tagline:
-      'Empowers university students with a safe, closed-loop trading environment for textbooks and academic supplies.',
-    category: 'Mobile',
-    year: '2024',
-    visibility: 'Public',
-    stack: ['Kotlin', 'Firebase', 'Java', 'Material Design'],
-    repoUrl: 'https://github.com/M8Sh3ck01',
-    problem:
-      'Students buy and sell textbooks in scattered WhatsApp groups, with no structure, no trust, and too easy to get scammed.',
-    approach:
-      'Built a closed-loop trading app for the university community with Kotlin, Firebase auth/data, and Material Design, keeping every transaction inside verified student circles.',
-    result:
-      'A safe, community-only marketplace for textbooks and academic supplies that keeps trades within the university.',
-  },
-  {
-    title: 'Native Core Bridge',
-    tagline:
-      'Bridges the gap between high-level JS frameworks and low-level system APIs for performance-critical Bluetooth and file-system operations.',
-    category: 'Systems',
-    year: '2025',
-    visibility: 'Private',
-    stack: ['Kotlin', 'Java', 'JNI', 'Android SDK'],
-    problem:
-      'High-level JS frameworks can\u2019t touch low-level Android system APIs directly, so Bluetooth and file-system work ran slow through generic bridge layers.',
-    approach:
-      'Wrote a native bridge in Kotlin/Java exposed through JNI, so performance-critical Bluetooth and file-system operations run at native speed under a JS-friendly interface.',
-    result:
-      'A native core that JS frameworks can call, keeping low-level operations fast without leaving the app ecosystem.',
-    takeaways:
-      'Learning JNI was worth it; the 30-line native path beat a generic wrapper by a wide margin.',
-  },
-  {
-    title: 'CampusConnect',
-    tagline:
-      'A high-performance, full-stack marketplace application designed for community-based buying and selling with real-time interaction.',
-    category: 'Mobile',
-    year: '2024',
-    visibility: 'Private',
-    stack: ['React Native', 'Expo', 'Node.js', 'MongoDB', 'Socket.io'],
-    problem:
-      'Campus communities needed a way to buy and sell that felt live, with instant responses and no page refreshes.',
-    approach:
-      'Combined a React Native + Expo client with a Node.js + MongoDB backend and Socket.io for real-time updates across listings and chats.',
-    result:
-      'A full-stack marketplace where listings and conversations update in real time across the community.',
   },
   {
     title: 'LocalBlocks',
@@ -171,7 +109,7 @@ export const projects: Project[] = [
     year: '2025',
     visibility: 'Public',
     stack: ['React', 'TypeScript', 'Tauri', 'Rust', 'BlockNote', 'Mantine', 'Vite', 'Zustand'],
-    repoUrl: 'https://github.com/M8Sh3ck01',
+    repoUrl: 'https://github.com/M8Sh3ck01/LocalBlocks',
     problem:
       'Web-based editors are slow and lose your data to the cloud. A local-first editor should feel native and keep everything on disk.',
     approach:
@@ -195,19 +133,39 @@ export const projects: Project[] = [
       'A complete cafeteria system handling daily menus, catered event bookings and meal subscriptions with secure role-based access.',
   },
   {
-    title: 'SmartStock',
+    title: 'Slack/Discord Workspace Clone',
     tagline:
-      'A visual-first, offline-first inventory management app with smart expiration strategies and a gamified daily workflow.',
-    category: 'Mobile',
+      'A Slack/Discord-style messaging workspace for web and mobile PWA, built with React 19 and a feature-sliced architecture.',
+    category: 'Web',
     year: '2026',
     visibility: 'Public',
-    stack: ['React Native', 'Expo', 'NativeWind', 'WatermelonDB', 'Expo Router'],
+    stack: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'TanStack Query', 'Zustand', 'Radix UI'],
+    repoUrl: 'https://github.com/M8Sh3ck01/slack-discord-clone',
     problem:
-      'Tracking inventory with expiry dates is a chore, and most apps feel like spreadsheets and get abandoned.',
+      'Real-time team messaging is either heavyweight SaaS or a serious engineering challenge to build well, spanning channels, threads and presence.',
     approach:
-      'Built a React Native app with WatermelonDB for fast offline-first storage and Expo Router for navigation. Made the daily flow visual and gamified to keep people actually using it.',
+      'Built a web and mobile PWA with React 19, TypeScript and Vite, organized into feature slices (workspaces and channels, chat feed, thread panel, user presence). Used TanStack Query for server state, Zustand for UI state, TanStack Virtual for long feeds, and MSW to mock the REST API before a real backend is wired in.',
     result:
-      'An offline-first inventory app with smart expiration reminders and a workflow designed to make daily stock checks a habit.',
+      'A fully functional workspace clone covering channels, threads and presence on web and mobile, with a documented path to a production backend.',
+    takeaways:
+      'Virtualizing the chat feed kept rendering smooth even with thousands of messages in the list.',
+  },
+  {
+    title: 'Sonic',
+    tagline:
+      'A high-fidelity, offline-first Android music player engineered for stable playback and a buttery-smooth local library.',
+    category: 'Mobile',
+    year: '2026',
+    visibility: 'Private',
+    stack: ['Kotlin', 'Jetpack Compose', 'Media3', 'Room', 'Koin'],
+    problem:
+      'Streaming apps are useless without a connection, and stock players rarely feel native, so local music on Android is often a rough experience.',
+    approach:
+      'Built a pure-Kotlin player on Jetpack Media3 (exoplayer + session) with a Room-backed offline catalog, a Compose Material 3 UI and Koin dependency injection, designed around modern Android background-execution rules.',
+    result:
+      'A local-first player with fast offline file discovery and stable, stutter-free playback for wired and wireless headphones.',
+    takeaways:
+      'Locking an architecture PRD before coding kept playback, lifecycle and UI work on one clean baseline.',
   },
 ]
 
@@ -217,7 +175,7 @@ export const experience = [
     company: 'Personal & University Projects',
     period: '2023 - Present',
     description:
-      'Designing and shipping 9+ production-quality applications across Android, web and desktop, spanning native bridges, offline-first mobile apps and full-stack platforms.',
+      'Designing and shipping 6 production-quality applications across Android, web and desktop, spanning offline-first mobile apps, native desktop editors and full-stack platforms.',
   },
   {
     role: 'BSc ICT Student',

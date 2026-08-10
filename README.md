@@ -13,10 +13,10 @@ npm run preview   # preview the production build locally
 
 ## How to edit
 
-**All content lives in `src/data.ts`** — profile, projects, skills, experience, education, socials.
+**All content lives in `src/data.ts`** — profile, projects, experience, education, socials.
 
-- `profile.githubUsername` — drives the real-time GitHub contribution chart (section shows
-  your actual `ghchart.rshah.org` heatmap).
+- `contactForm.web3formsAccessKey` — your Web3Forms access key; submissions post straight to
+  your inbox via `api.web3forms.com/submit`.
 - `testimonials` — starts **empty** on purpose, so the section hides itself. Add real quotes
   (clients, lecturers, collaborators) when you have them; the section reappears automatically.
 - Project cards show a **Public / Private** badge. Public projects link to GitHub; private ones
@@ -35,5 +35,4 @@ output directory `dist`. Netlify Drag-and-Drop: build, then drag `dist/` in.
 ## Notes
 
 - Dark mode is the default; the toggle persists your choice.
-- The contact form opens a pre-filled email (no backend). Swap in Formspree if you want submissions
-  without opening an email client.
+- The contact form submits to Web3Forms, so messages land in your inbox with no backend to run.
