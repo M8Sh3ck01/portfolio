@@ -25,7 +25,7 @@ export const profile = {
   location: 'Mzuzu, Malawi',
   email: 'misheckchampopa01@gmail.com',
   whatsapp: 'https://wa.me/265995191852',
-  avatar: '/profile.jpg',
+  avatar: '/profile.png',
   githubUsername: 'M8Sh3ck01',
 }
 
