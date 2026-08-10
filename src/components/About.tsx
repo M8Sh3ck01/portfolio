@@ -23,12 +23,12 @@ export function About() {
             <p>
               I'm Misheck, an ICT student at Mzuzu University who got into code by wanting to build things that
               actually work well. That instinct is what drives every project I take on, whether it's a native Android
-              app, a web platform, or a low-level bridge that most people wouldn't touch.
+              app, a web platform, or a desktop editor that stays fast on every keystroke.
             </p>
             <p>
-              What I'm most proud of is the range: a Kotlin/JNI native core for Bluetooth and file-system ops, a
-              Tauri + Rust desktop editor, offline-first mobile apps, and full-stack systems with real-time features.
-              Each one was designed, built, and shipped end to end by me: the decisions, the tradeoffs, and the bugs.
+              What I'm most proud of is the range: a Tauri + Rust desktop editor, an offline-first Android music
+              player, cross-platform mobile apps, and full-stack systems with real-time features. Each one was
+              designed, built, and shipped end to end by me: the decisions, the tradeoffs, and the bugs.
             </p>
             <p>
               I'm currently looking for freelance projects and internship opportunities where I can bring that range

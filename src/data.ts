@@ -61,7 +61,7 @@ export const services = [
     title: 'System Architecture',
     icon: 'server',
     description:
-      'APIs, native bridges, and backend services that connect everything.',
+      'Desktop apps, APIs, and backend services that connect everything.',
     points: ['Desktop apps with Tauri + Rust', 'Offline-first storage with Room, SQLite & WatermelonDB', 'OAuth, payments & real-time WebSocket features', 'Database design: MySQL, MongoDB, SQLite, Firebase'],
   },
 ]
