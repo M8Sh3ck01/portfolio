@@ -99,7 +99,7 @@ export function Hero() {
               </Reveal>
             </div>
 
-            <div className="relative mt-16 flex justify-center lg:mt-0 lg:justify-end">
+            <div className="relative mt-16 flex justify-center lg:-mt-16 lg:justify-end">
               <div className="relative w-60 sm:w-80 lg:h-[min(76vh,600px)] lg:w-auto">
                 <div aria-hidden className="absolute -inset-8 rounded-full bg-accent opacity-[0.14] blur-[90px]" />
                 <img
