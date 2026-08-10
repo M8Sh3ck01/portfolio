@@ -29,7 +29,7 @@ export function Hero() {
         </span>
 
         <div className="relative m-auto w-full max-w-6xl px-5 py-10 sm:px-8 sm:py-12">
-          <div className="lg:grid lg:grid-cols-[1.2fr_0.8fr] lg:items-center lg:gap-6">
+          <div className="lg:grid lg:grid-cols-[1.3fr_0.7fr] lg:items-start lg:gap-6">
             <div>
               <Reveal>
                 <p className="font-mono text-sm text-muted-foreground sm:text-base">Hello, I'm</p>
@@ -105,7 +105,7 @@ export function Hero() {
                 <img
                   src="/profile.png"
                   alt="Misheck Champopa"
-                  className="relative z-10 block h-60 w-60 object-contain sm:h-80 sm:w-80 lg:h-full lg:w-auto lg:translate-x-12"
+                  className="relative z-10 block h-60 w-60 object-contain sm:h-80 sm:w-80 lg:h-full lg:w-auto lg:translate-x-6"
                 />
               </div>
             </div>
