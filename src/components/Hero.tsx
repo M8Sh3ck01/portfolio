@@ -22,7 +22,7 @@ export function Hero() {
 
         <span
           aria-hidden
-          className="pointer-events-none absolute right-2 top-[60%] hidden -translate-y-1/2 select-none whitespace-nowrap text-[clamp(6rem,13vw,13rem)] font-extrabold leading-none tracking-tight text-transparent lg:block"
+          className="pointer-events-none absolute right-2 top-[60%] hidden -translate-y-1/2 select-none whitespace-nowrap text-[clamp(6rem,13vw,13rem)] font-extrabold leading-none tracking-tight text-transparent blur-[3px] lg:block"
           style={{ WebkitTextStroke: '1.5px rgba(245,158,11,0.26)' }}
         >
           CHAMPO
