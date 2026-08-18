@@ -97,6 +97,22 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           {block('The result', project.result)}
           {project.takeaways ? block('What I learned', project.takeaways) : null}
         </div>
+
+        {project.images && project.images.length > 0 ? (
+          <div className="mt-8">
+            <h4 className="font-mono text-xs uppercase tracking-wider text-accent">Screenshots</h4>
+            <div className="mt-3 flex gap-3 overflow-x-auto pb-2">
+              {project.images.map((src, i) => (
+                <img
+                  key={i}
+                  src={src}
+                  alt={`${project.title} screenshot ${i + 1}`}
+                  className="h-auto w-48 shrink-0 rounded-lg border border-border object-cover sm:w-56"
+                />
+              ))}
+            </div>
+          </div>
+        ) : null}
       </div>
     </div>
   )

@@ -6,6 +6,7 @@ export type Project = {
   visibility: 'Public' | 'Private'
   stack: string[]
   image?: string
+  images?: string[]
   liveUrl?: string
   repoUrl?: string
   problem: string
@@ -158,6 +159,13 @@ export const projects: Project[] = [
     year: '2026',
     visibility: 'Private',
     stack: ['Kotlin', 'Jetpack Compose', 'Media3', 'Room', 'Koin'],
+    image: '/sonic/Screenshot_20260818-122307.jpg',
+    images: [
+      '/sonic/Screenshot_20260818-122307.jpg',
+      '/sonic/Screenshot_20260818-122529.jpg',
+      '/sonic/Screenshot_20260818-122545.jpg',
+      '/sonic/Screenshot_20260818-122614.jpg',
+    ],
     problem:
       'Streaming apps are useless without a connection, and stock players rarely feel native, so local music on Android is often a rough experience.',
     approach:
