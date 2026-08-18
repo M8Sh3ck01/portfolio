@@ -154,11 +154,11 @@ export const projects: Project[] = [
   {
     title: 'Sonic',
     tagline:
-      'A high-fidelity, offline-first Android music player engineered for stable playback and a buttery-smooth local library.',
+      'A hybrid Android music player combining local library management with online streaming and download-to-play via NewPipe.',
     category: 'Mobile',
     year: '2026',
     visibility: 'Private',
-    stack: ['Kotlin', 'Jetpack Compose', 'Media3', 'Room', 'Koin'],
+    stack: ['Kotlin', 'Jetpack Compose', 'Media3', 'Room', 'Koin', 'NewPipe', 'FFmpeg'],
     image: '/sonic/Screenshot_20260818-122307.jpg',
     images: [
       '/sonic/Screenshot_20260818-122307.jpg',
@@ -167,13 +167,13 @@ export const projects: Project[] = [
       '/sonic/Screenshot_20260818-122614.jpg',
     ],
     problem:
-      'Streaming apps are useless without a connection, and stock players rarely feel native, so local music on Android is often a rough experience.',
+      'Most music players force a choice: use a streaming app that needs a constant connection, or a stock local player with a rough, unpolished experience. Neither handles both worlds well.',
     approach:
-      'Built a pure-Kotlin player on Jetpack Media3 (exoplayer + session) with a Room-backed offline catalog, a Compose Material 3 UI and Koin dependency injection, designed around modern Android background-execution rules.',
+      'Built a pure-Kotlin player on Jetpack Media3 with a Room-backed local catalog and NewPipe integration for online streaming and downloading. Added a background download worker with progress notifications, Compose Material 3 UI, and Koin dependency injection.',
     result:
-      'A local-first player with fast offline file discovery and stable, stutter-free playback for wired and wireless headphones.',
+      'A hybrid player that scans and plays local files instantly while also letting users search, stream, and download tracks from online sources for offline play.',
     takeaways:
-      'Locking an architecture PRD before coding kept playback, lifecycle and UI work on one clean baseline.',
+      'Designing the local-first and online paths as separate data layers from day one kept the codebase clean as the feature set grew.',
   },
 ]
 
